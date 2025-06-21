@@ -8,3 +8,10 @@ Run this command:
 ```
 kubectl create deployment todo-app --image=sericy/todo-app
 ```
+
+### For exercise 1.4
+
+Run this command:
+```
+kubectl apply -f manifests/deployment.yaml
+```
