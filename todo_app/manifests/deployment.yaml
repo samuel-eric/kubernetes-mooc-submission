@@ -13,4 +13,7 @@ spec:
     spec:
       containers:
       - name: todo-app
-        image: sericy/todo-app
+        image: sericy/todo-app:latest
+        env:
+          - name: PORT
+            value: "3000"
