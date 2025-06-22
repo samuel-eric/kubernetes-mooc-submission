@@ -23,3 +23,11 @@ Run this command:
 kubectl apply -f manifests/service.yaml
 ```
 Make sure port 30080 is connected to host port with k3d, and no other service is using port 30080
+
+### For exercise 1.8
+
+Run this command:
+```
+kubectl apply -f manifests/ingress.yaml
+```
+Make sure there is no other ingress listening on port 80.
