@@ -15,3 +15,11 @@ Run this command:
 ```
 kubectl apply -f manifests/deployment.yaml
 ```
+
+### For exercise 1.7
+
+Run this command:
+```
+kubectl apply -f manifests
+```
+Make sure there is no other ingress listening on port 80.

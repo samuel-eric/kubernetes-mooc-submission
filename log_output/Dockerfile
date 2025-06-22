@@ -2,7 +2,9 @@ FROM node:24-alpine
 
 WORKDIR /usr/src/app
 
-RUN npm install uuid
+EXPOSE 3000
+
+RUN npm install express uuid
 
 COPY . .
 
