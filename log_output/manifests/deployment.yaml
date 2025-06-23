@@ -15,12 +15,17 @@ spec:
       volumes:
         - name: shared-log
           emptyDir: {}
+        - name: shared-count-data
+          persistentVolumeClaim:
+            claimName: log-output-pingpong-pvc
       containers:
         - name: log-output-reader
           image: sericy/log-output-reader
           volumeMounts:
             - name: shared-log
               mountPath: /usr/src/app/log
+            - name: shared-count-data
+              mountPath: /usr/src/app/data
         - name: log-output-writer
           image: sericy/log-output-writer
           volumeMounts:

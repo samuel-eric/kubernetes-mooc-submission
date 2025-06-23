@@ -11,6 +11,13 @@ spec:
       labels:
         app: ping-pong
     spec:
+      volumes:
+        - name: shared-count-data
+          persistentVolumeClaim:
+            claimName: log-output-pingpong-pvc
       containers:
       - name: ping-pong
         image: sericy/ping-pong
+        volumeMounts:
+          - name: shared-count-data
+            mountPath: /usr/src/app/data
