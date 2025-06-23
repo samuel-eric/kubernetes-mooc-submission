@@ -120,17 +120,41 @@ func imageHandler(w http.ResponseWriter, r *http.Request) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filesystem Image Viewer</title>
     <style>
-        body { font-family: sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; margin: 0; text-align: center; }
-        img { max-width: 90%; max-height: 80vh; border: 5px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-		p { color: #555; margin-top: 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f0f2f5; margin: 0; padding: 20px; }
+        .container { max-width: 800px; width: 100%; }
+        img { width: 100%; height: auto; border-radius: 8px; border: 5px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .todo-form { display: flex; margin-top: 20px; }
+        .todo-form input { flex-grow: 1; border: 1px solid #ccc; border-radius: 4px; padding: 10px; font-size: 16px; }
+        .todo-form button { background-color: #007bff; color: white; border: none; padding: 10px 20px; margin-left: 10px; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .todo-form button:hover { background-color: #0056b3; }
+        .todo-list { background-color: white; list-style-type: none; padding: 10px 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .todo-list h2 { text-align: center; color: #333; }
+        .todo-list li { padding: 12px 0; border-bottom: 1px solid #eee; color: #555; }
+        .todo-list li:last-child { border-bottom: none; }
     </style>
 </head>
 <body>
-	<h1>The project App</h1>
-    <img src="`)
+	<div class="container">
+		<h1>The project App</h1>
+		<img src="`)
 	htmlBuffer.WriteString(dataURI)
 	htmlBuffer.WriteString(`" alt="A random image from Picsum, served from the filesystem">
-	<p>DevOps with Kubernetes 2025</p>
+		<form class="todo-form" onsubmit="event.preventDefault(); alert('Submitting todos is not implemented yet!');">
+			<input type="text" name="todo" placeholder="What needs to be done?" maxlength="140" required>
+			<button type="submit">Add Todo</button>
+		</form>
+
+		<div class="todo-list">
+			<h2>My Todos</h2>
+			<ul>
+				<li>Learn Go concurrency</li>
+				<li>Set up a Kubernetes cluster</li>
+				<li>Master HTML forms and CSS</li>
+				<li>Read a book on system design</li>
+			</ul>
+		</div>
+		<p>DevOps with Kubernetes 2025</p>
+	</div>
 </body>
 </html>
 `)
