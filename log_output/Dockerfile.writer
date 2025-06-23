@@ -1,0 +1,11 @@
+FROM node:24-alpine
+
+WORKDIR /usr/src/app
+
+EXPOSE 3000
+
+RUN npm install uuid
+
+COPY writer.js .
+
+CMD [ "node", "writer.js" ]
