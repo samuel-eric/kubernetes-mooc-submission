@@ -16,7 +16,7 @@ Run this command:
 kubectl apply -f manifests/deployment.yaml
 ```
 
-### For exercise 1.7
+### For exercise 1.7 and exercise 1.10
 
 Run this command:
 ```
