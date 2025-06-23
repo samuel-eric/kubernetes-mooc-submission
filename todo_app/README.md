@@ -31,3 +31,11 @@ Run this command:
 kubectl apply -f manifests/ingress.yaml
 ```
 Make sure there is no other ingress listening on port 80.
+
+### For exercise 1.12
+
+Run this command:
+```
+kubectl apply -f manifests
+```
+Make sure there is no other ingress listening on port 80 and there is no other persistent volume on /tmp/kube path.

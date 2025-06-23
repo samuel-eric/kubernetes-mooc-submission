@@ -11,9 +11,16 @@ spec:
       labels:
         app: todo-app
     spec:
+      volumes:
+        - name: image-data
+          persistentVolumeClaim:
+            claimName: todo-app-pvc
       containers:
       - name: todo-app
         image: sericy/todo-app:latest
         env:
           - name: PORT
             value: "3000"
+        volumeMounts:
+          - name: image-data
+            mountPath: /usr/src/app/storage
